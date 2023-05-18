@@ -1,0 +1,12 @@
+/* prevent padding from counting toward width or height */
+html {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  /* make backgruund take up the full height */
+  min-height: 100vh;
+}
+
+/* above is boilerplate template stuff */
