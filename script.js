@@ -5,6 +5,7 @@ const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const showAuthBtn = document.getElementById('show-auth');
 const loader = document.getElementById('loader');
+const lottieElement = document.getElementById('lottie-background');
 
 // Show loading
 function loading() {
@@ -20,7 +21,7 @@ function complete() {
 // Show new quote
 function newQuote() {
   loading();
-  // Pick a random quote from apiQuotes array
+  // Pick a random quote from localQuotes array
   const quote = localQuotes[Math.floor(Math.random() * localQuotes.length)];
   // Hide author initially
   authorText.classList.add('hide-author');
@@ -41,19 +42,6 @@ function newQuote() {
   complete();
 }
 
-// CODE TO UTILIZE 3RD PARTY API *must change On Load to getQuotes
-// async function getQuotes() {
-//   loading();
-//   const apiUrl = 'https://jacintodesign.github.io/quotes-api/data/quotes.json';
-//   try {
-//     const response = await fetch(apiUrl);
-//     apiQuotes = await response.json();
-//     newQuote();
-//   } catch (error) {
-//     // Handle error here
-//   }
-// }
-
 // Tweet quote - note the back tics
 function tweetQuote() {
   const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
@@ -67,6 +55,12 @@ function showAuth() {
 newQuoteBtn.addEventListener('click', newQuote);
 twitterBtn.addEventListener('click', tweetQuote);
 showAuthBtn.addEventListener('click', showAuth);
+lottieElement.addEventListener('data_ready', function() {
+  lottieElement.style.display = 'flex';
+  lottieElement.style.width = '100vw';
+  lottieElement.style.height = '100vh';
+}
+);
 
 // On load
 newQuote();

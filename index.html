@@ -10,44 +10,60 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  </head>
-
-  <body>
+    <link
+    rel="stylesheet"
+    href="style.css"
+    />
+    <script
+    src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+    </script>
     <lottie-player
-      id="lottie-background"
-      src="https://assets9.lottiefiles.com/packages/lf20_ym8w5cx4.json"
-      background="transparent"
-      speed="1"
-      style="width: 100%; height: 100%"
-      loop
-      autoplay
+    id="lottie-background"
+    src="https://assets8.lottiefiles.com/packages/lf20_u0vljhyt.json"
+    background="transparent"
+    speed="1"
+    style="width: 100vw; height: 100vh;"
+    loop
+    autoplay
     ></lottie-player>
-    <div class="quote-container" id="quote-container">
-      <!-- Quote element  -->
-      <div class="quote-text">
-        <i class="fas fa-quote-left"></i>
-        <span id="quote"></span>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="body-wrapper">
+      <div id="scroll-container">
+        <div id="scroll-text">Warning: These quotes have not been edited for language or content...
+        </div>
+      </header>
+      <main class="page-body">
+        <div class="quote-container" id="quote-container">
+          <!-- Quote element  -->
+          <div class="quote-text">
+            <i class="fas fa-quote-left"></i>
+            <span id="quote"></span>
+          </div>
+          <!-- Author -->
+          <div class="quote-author">
+            <span id="author"></span>
+          </div>
+          <!-- Buttons -->
+          <div class="button-container">
+            <button class="twitter-button" id="twitter" title="Tweet This!">
+              <i class="fa-brands fa-twitter"> tweet this</i>
+            </button>
+            <button id="new-quote"><i class="fa-brands">next quote</i></button>
+            <button id="show-auth"><i class="fa-brands">Frank or George?</i></button>
+          </div>
+        </div>
+        </div>
+        <!-- Loading anim -->
+        <div class="loader" id="loader"></div>
+        <!-- Scripts -->
+        <script src="quotes.js"></script>
+        <script src="script.js"></script>
+      </main>
+      <footer class="page-footer">
+        <a href="https://gitlab.com/heatherdepesa/carlin-zappa-quotes" target="_blank">a micro project by Heather DePesa</a>
       </div>
-      <!-- Author -->
-      <div class="quote-author">
-        <span id="author"></span>
-      </div>
-      <!-- Buttons -->
-      <div class="button-container">
-        <button class="twitter-button" id="twitter" title="Tweet This!">
-          <i class="fa-brands fa-twitter"></i>
-        </button>
-        <button id="new-quote">New Quote</button>
-        <button id="show-auth">Carlin or Zappa?</button>
-      </div>
-    </div>
-    <!-- Loading anim -->
-    <div class="loader" id="loader"></div>
-    <!-- Scripts -->
-    <script src="quotes.js"></script>
-    <script src="script.js"></script>
-  </body>
+      </footer>
+      </body>
 </html>

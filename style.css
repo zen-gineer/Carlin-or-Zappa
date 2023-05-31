@@ -1,41 +1,62 @@
-@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@1,700&family=Luckiest+Guy&family=Montez&family=Satisfy&family=Sigmar+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital@0;1&display=swap');
 
-body,
-html {
+.page-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+html, body,
+.wrapper {
+  display: flex;
   box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
   margin: 0;
   padding: 0;
-  height: 100%;
   background-size: cover;
-  color: #dbdeca;
-  font-family: "Indie Flower", cursive;
+  color: #000000;
+  font-family: 'PT Sans', sans-serif;
   font-weight: 300;
-  text-align: center;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
+
 
 #lottie-background {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   z-index: -1;
 }
 
+.content {
+  padding: 20px;
+  min-height: 100%;
+  margin: 0 auto -50px;
+}
+
+.content-inside {
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
 .quote-container {
-  width: 50%;
+  width: 80%;
   max-width: 900px;
+  /* min-width: fit-content; */
   padding: 20px 30px;
-  border-radius: 65px;
-  background-color: rgba(129, 233, 179, 0.4);
-  box-shadow: 0 10px 10px 6px rgba(0, 0, 0, 0.2);
+  border-radius:5px;
+  background-color: rgba(241, 208, 23, 0.4);
+  box-shadow: 0 6px 6px 6px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
 }
 
 .quote-text {
   font-size: 2rem;
+  text-align: center;
 }
 
 .long-quote {
@@ -70,20 +91,20 @@ button {
   font-size: 1rem;
   border: none;
   border-radius: 90px;
-  color: #ced2b9;
-  background: #092247;
+  color: #000000;
+  background: #88f754b2;
   outline: none;
   padding: 0.5rem 1rem;
-  box-shadow: 0 0.3rem 3px rgba(44, 11, 88, 0.4);
+  box-shadow: 0 0.3rem 3px rgba(28, 122, 10, 0.4);
 }
 
 button:hover {
-  filter: brightness(175%);
+  color: #38a1f3;
+  filter: brightness(125%);
 }
 
 button:active {
   transform: translate(0, 0.3rem);
-  box-shadow: 0 0.1rem rgba(255, 255, 255, 0.7);
 }
 
 .twitter-button:hover {
@@ -93,6 +114,36 @@ button:active {
 .fa-twitter {
   font-size: 1rem;
 }
+
+.page-footer {
+  padding-bottom: 12px;
+  font-size: .8rem;
+  font-family: 'Gill Sans', sans-serif;
+}
+
+  a {
+    outline: none;
+    text-decoration: none;
+    padding: 2px 1px 0;
+  }
+  a:link {
+    color: hotpink;
+  }
+  a:visited {
+    color: rgb(209, 163, 178);
+  }
+  a:focus,
+  a:hover {
+    border-bottom: 1px solid;
+  }
+  a:active {
+    color: hotpink;
+  }
+  a[href^="https"] {
+    background: url("favicono.ico") no-repeat 100% 0;
+    background-size: 16px 16px;
+    padding-right: 19px;
+  }
 
 .loader {
   border: 16px solid #c0d6df;
@@ -120,5 +171,49 @@ button:active {
 
   .quote-text {
     font-size: 2.5rem;
+  }
+}
+
+#scroll-container {
+  padding-top: 12px;
+  border: none;
+  margin: 0;
+  overflow: hidden;
+}
+
+#scroll-text {
+  color: hotpink;
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+
+  -moz-animation: my-animation 25s linear infinite;
+  -webkit-animation: my-animation 25s linear infinite;
+  animation: my-animation 25s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%); }
+  to { -moz-transform: translateX(-100%); }
+}
+
+/* for Chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%); }
+  to { -webkit-transform: translateX(-100%); }
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
